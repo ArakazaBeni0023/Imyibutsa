@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imyibutsa Y'Ikirundi</title>
+    <link rel="stylesheet" href="imyibutsa.css">
+    <!-- vue  -->
+    <script src="vue.3.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-fluid">
+            <div class="container">
+                <h1>IMYIBUTSA Y'IKIRUNDI</h1>
+                <textarea v-model="umwibutsa" cols="30" rows="10" placeholder="Andika ngaha umwibutsa"></textarea>
+                <p>{{gukebura}}</p>
+                <div class="btns">
+                    <button class="btn emeza" @click="emeza">Emeza</button>
+                    <button class="btn emezaImpinduka" v-show="notVisible" @click="emezaImpinduka">Emeza
+                        Impinduka</button>
+                </div>
+                <!-- kwerekana imyibutsa -->
+                <ol>
+                    <li v-for="(item, i) in imyibutsa">
+                        <div class="item">
+                            <div class="options">
+                                <button class="gufuta" @click="gufuta(item, i)">Futa</button>
+                                <button class="gukosora" @click="gukosora (item, i)">Kosora</button>
+                            </div>
+                            {{item}}
+                        </div>
+                    </li>
+                </ol>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Incidunt, in nihil quos deserunt, dolorem dolore sint atque,
+        nostrum voluptates minima saepe voluptas? Itaque, excepturi. 
+        Nemo veritatis vel rerum odio sit. 
+    -->
+</body>
+<script>
+    const { createApp } = Vue
+    createApp({
+        data() {
+            return {
+                umwibutsa: '',
+                imyibutsa: [],
+                gukebura: '',
+                id: null,
+                notVisible: false
+            }
+        },
+        methods: {
+            emeza() {
+                if (this.umwibutsa.trim() == "") {
+                    this.gukebura = 'Shiramwo umwibutsa !'
+                }
+                else {
+                    this.gukebura = '';
+                    this.imyibutsa.push(this.umwibutsa);
+                    this.umwibutsa = "";
+                }
+            },
+            gufuta(itemId) {
+                this.imyibutsa.splice(itemId, 1)
+            },
+            gukosora(item, itemId) {
+                this.umwibutsa = item;
+                this.id = itemId;
+                this.notVisible = true;
+            },
+            emezaImpinduka() {
+                this.imyibutsa[this.id] = this.umwibutsa;
+                this.umwibutsa = "";
+                this.notVisible = false;
+            }
+        }
+    }).mount('#app')
+</script>
+
+</html>

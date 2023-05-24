@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #0b131f;
+    color: #fff;
+}
+
+.container-fluid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    min-height: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2394c1;
+}
+
+textarea {
+    all: unset;
+    background: #192537;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .3rem;
+    transition: border .5s ease;
+    border: 1px solid #2b3648;
+    font-family: 'corbel';
+}
+
+textarea:focus {
+    border: 1px solid #2394c1;
+}
+
+p {
+    color: #e46576;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: .5rem;
+    text-decoration: blink;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    all: unset;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: background .5s ease;
+}
+
+.emeza {
+    width: 100%;
+    background: #2394c1;
+}
+
+.emeza:hover {
+    background: #196a8b;
+}
+
+.emezaImpinduka {
+    background: #e46576;
+    width: 29%;
+    margin-left: 1rem;
+}
+
+.emezaImpinduka:hover {
+    background: #a94b57;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding-inline: 1rem;
+    padding-block-end: 1rem;
+    background: #192537;
+    margin-bottom: 1rem;
+}
+
+.options {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: .5rem;
+    border-bottom: 1px solid #29374b;
+    padding-block: .5rem;
+    margin-bottom: .5re;
+}
+
+.gufuta,
+.gukosora {
+    all: unset;
+    padding: .2rem .4rem;
+    background: #202a39;
+    border-radius: .2rem;
+    cursor: pointer;
+    transition: background .5s ease;
+}
+
+.gufuta:hover {
+    background: #e46576;
+}
+
+.gukosora:hover {
+    background: #3ca03e;
+}
