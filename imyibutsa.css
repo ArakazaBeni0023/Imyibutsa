@@ -8,6 +8,7 @@
 body {
     background: #0b131f;
     color: #fff;
+    position: relative;
 }
 
 .container-fluid {
@@ -19,10 +20,20 @@ body {
 }
 
 .container {
+    position: fixed;
+    top: 20%;
+    left: 1%;
     display: flex;
     flex-direction: column;
     width: 600px;
     min-height: 300px;
+}
+
+.side {
+    position: absolute;
+    right: 0;
+    width: 800px;
+    padding-inline: 3rem;
 }
 
 h1 {
@@ -99,6 +110,7 @@ p {
     padding-block-end: 1rem;
     background: #192537;
     margin-bottom: 1rem;
+    letter-spacing: 1px;
 }
 
 .options {
@@ -108,7 +120,7 @@ p {
     gap: .5rem;
     border-bottom: 1px solid #29374b;
     padding-block: .5rem;
-    margin-bottom: .5re;
+    margin-bottom: .5rem;
 }
 
 .gufuta,
